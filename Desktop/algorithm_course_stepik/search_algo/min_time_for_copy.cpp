@@ -41,14 +41,12 @@ int SearchMinTime(int N, int x, int y) {
     int last_pages_count = 0;
     int last_pages_time = 0;
 
-    
+
 
     if (main_part_pages % (min_pages_count + max_pages_count) > 0) {
         last_pages_count = main_part_pages % (min_pages_count + max_pages_count);
-        // std::cout << last_pages_count << std::endl;
         last_pages_time = last_pages_count >= (min_pages_count + max_pages_count) ?
          last_pages_count / (min_pages_count + max_pages_count) * nok : last_pages_count * min;
-        // std::cout << last_pages_time << std::endl;
     }
 
     /*
@@ -64,7 +62,6 @@ int SearchMinTime(int N, int x, int y) {
     // }
 
     int total_min_time = first_page_time + main_part_time + last_pages_time;
-    // std::cout << total_min_time << std::endl;
     return total_min_time;
 }
 
