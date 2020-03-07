@@ -2,20 +2,6 @@
 #include <vector>
 #include <utility>
 
-// 4 1 1    3
-// 5 1 2    4
-// 40 2 3   50
-// 1 1 1    1
-// 2 1 1    1
-// 7 1 7    7
-// 7 10 5   25
-// 7 10 2   12
-// 20 10 10  110
-// 20 9 10  99
-// 21 10 9  108
-
-
-// 7 10 5
 
 int NOD(int a, int b){
     while (a != b){
@@ -32,17 +18,12 @@ int NOK(int a, int b){
     return abs(a * b) / NOD(a, b);
 }
 
-
-// 7 10 5
 int SearchMinTime(int N, int x, int y) {
     int max = x > y ? x : y;
     int min = x < y ? x : y;
 
     int first_page_count = 1;
     int first_page_time = first_page_count * min;
-
-    // int l = 0;
-    // int r = first_page_time * max + min;
 
     int pages_count = x + y;
     int pages_time = x * y;
@@ -60,6 +41,8 @@ int SearchMinTime(int N, int x, int y) {
     int last_pages_count = 0;
     int last_pages_time = 0;
 
+    
+
     if (main_part_pages % (min_pages_count + max_pages_count) > 0) {
         last_pages_count = main_part_pages % (min_pages_count + max_pages_count);
         // std::cout << last_pages_count << std::endl;
@@ -67,6 +50,10 @@ int SearchMinTime(int N, int x, int y) {
          last_pages_count / (min_pages_count + max_pages_count) * nok : last_pages_count * min;
         // std::cout << last_pages_time << std::endl;
     }
+
+    /*
+
+    */
 
     // if (main_part_pages % nok > 0) {
     //     last_pages_count = main_part_pages % nok;
